@@ -1,11 +1,11 @@
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
 function soma(x,y){
-return x+y;
+return x + y;
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, 
 //e somando `5` ao resultado retornado da função.
-var fuc = 5+soma(2,4);
+var fuc = 5 + soma(2,4);
 
 // Qual o valor atualizado dessa variável?
 console.log(fuc)
@@ -20,7 +20,7 @@ Onde VALOR é o novo valor da variável.
 */
 function nova(){
     nv = 2;
-    return nv;
+    return 'O valor da variavel agora é ' + nv;
 }
 
 // Invoque a função criada acima.
@@ -37,8 +37,10 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function funcao(a, b, c){
-
-    return (a*b*c)+2;
+    if (a === undefined || b === undefined || c === undefined ){
+        return 'Preencha todos os valore corremante!'
+    }
+    return (a * b * c) + 2;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -63,8 +65,26 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function agumtres(x,y,z){
+    // while (x === undefined || y === undefined || z === undefined){
+    //     return x || y || z;
+    // }
+    if (z === undefined){
+        return x + y;
+    }else if(x === undefined){
+        return y + z;
+    }else if (y === undefined){
+        return x + z;
+    }else if(x !== undefined && y !== undefined && z !== undefined){
+        return (x + y)/z;
+    }else if(x === undefined && y === undefined && z === undefined){
+        return false;
+    }else{
+        return null;
+    }
 
 }
 
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
+console.log("--------------------------")
+console.log(agumtres());
